@@ -15,8 +15,9 @@ class Sketch {
     let canvas : Canvas
     
     // Declare any properties you need for your sketch below this comment, but before init()
-    var x = 0
+    var x : Double = 0
     var s = 10
+    var y : Double = 0
 
 
     // This runs once, equivalent to setup() in Processing
@@ -34,10 +35,14 @@ class Sketch {
     func draw() {
                 
         // Horizontal position of circle
-        x = x + s
+        //x = x + s
+        x = Double(canvas.frameCount)
+        
+        // vertical position of circle
+        y = 0.1*(x-200)*(x-200)+50
         
         // Bounce when hitting wall
-        if (x > canvas.width || x < 0) {
+        if (x > Double(canvas.width) || x < 0) {
             s *= -1
         }
         
@@ -53,7 +58,7 @@ class Sketch {
         // Draw a circle that moves across the screen
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: Float(canvas.frameCount), saturation: 80, brightness: 90, alpha: 100)
-        canvas.drawEllipse(centreX: x, centreY: canvas.height / 2, width: 100, height: 100)
+        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
         
         
     }
