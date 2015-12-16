@@ -58,4 +58,11 @@ for i in -5...5 {
 // View the current state of the canvas
 canvas
 
+for xPosition in 0...5 {
+    xPosition * 100
+    canvas.drawLine(fromX: 100, fromY: 0 , toX: 100, toY: 500)
+ 
+    canvas.drawLine(fromX: 0, fromY: 0 , toX: 0, toY: 500)
+}
+
 
