@@ -27,31 +27,24 @@ class Sketch {
         canvas = Canvas(width: 400, height: 500)
         
         // The frame rate can be adjusted; the default is 60 fps
-        canvas.framesPerSecond = 60
+        canvas.framesPerSecond = 100
         
         // background
         canvas.fillColor = Color(hue: 181, saturation: 0, brightness: 98, alpha: 100)
         canvas.drawRectangle(bottomRightX: 0, bottomRightY: 0, width: canvas.width, height: canvas.height)
         //Vertical
-        canvas.drawLine(fromX: 100, fromY: 0 , toX: 100, toY: 500)
-        canvas.drawLine(fromX: 0, fromY: 0 , toX: 0, toY: 500)
-        canvas.drawLine(fromX: 200, fromY: 0 , toX: 200, toY: 500)
-        canvas.drawLine(fromX: 300, fromY: 0 , toX: 300, toY: 500)
-        canvas.drawLine(fromX: 400, fromY: 0 , toX: 400, toY: 500)
-        canvas.drawLine(fromX: 500, fromY: 0 , toX: 500, toY: 500)
-        //Horizontal
-        canvas.drawLine(fromX: 0, fromY: 100 , toX: 500, toY: 100)
-        canvas.drawLine(fromX: 0, fromY: 0 , toX: 500, toY: 0)
-        canvas.drawLine(fromX: 0, fromY: 200 , toX: 500, toY: 200)
-        canvas.drawLine(fromX: 0, fromY: 300 , toX: 500, toY: 300)
-        canvas.drawLine(fromX: 0, fromY: 400 , toX: 500, toY: 400)
-        canvas.drawLine(fromX: 0, fromY: 500 , toX: 500, toY: 500)
         
-
-
-
-
-        //canvas.drawLine(fromX: Int, fromY: <#T##Int#>, toX: <#T##Int#>, toY: <#T##Int#>)
+        for i in 0...20 {
+            
+            
+            // draw vertical lines
+            canvas.drawLine(fromX: i * 25, fromY: 0 , toX: i * 25, toY: 500)
+            
+            // draw horizontal lines
+            canvas.drawLine(fromX: 0, fromY: i * 25 , toX: 500, toY: i * 25)
+            
+        }
+        
         
     }
     
