@@ -1,10 +1,4 @@
-//
-//  Sketch.swift
-//  Animation
-//
-//  Created by Russell Gordon on 2015-12-05.
-//  Copyright © 2015 Royal St. George's College. All rights reserved.
-//
+
 
 import Foundation
 
@@ -18,6 +12,8 @@ class Sketch {
     var x : Double = 0
     var s = 10
     var y : Double = 0
+    
+    
 
 
     // This runs once, equivalent to setup() in Processing
@@ -56,7 +52,14 @@ class Sketch {
         x = Double(canvas.frameCount)
         
         // vertical position of circle
-        y = 0.1*(x-200)*(x-200)+100
+        y = 0.1*(x-200)*(x-200)+50
+        
+        //Keep track of POS of points
+        
+        print(x)
+        print(y)
+    
+        canvas.drawLine(fromX: Int(x), fromY: Int(y), toX: 5, toY: 5)
         
         // Bounce when hitting wall
         if (x > Double(canvas.width) || x < 0) {
