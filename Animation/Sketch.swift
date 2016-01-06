@@ -12,7 +12,8 @@ class Sketch {
     var x : Double = 0
     var s = 10
     var y : Double = 0
-    
+    var oldx : Double = 0
+    var oldy : Double = 0
     
 
 
@@ -46,7 +47,11 @@ class Sketch {
     
     // Runs repeatedly, equivalent to draw() in Processing
     func draw() {
-                
+        
+        
+        oldx = x
+        oldy = y
+        
         // Horizontal position of circle
         //x = x + s
         x = Double(canvas.frameCount)
@@ -57,10 +62,9 @@ class Sketch {
         //Keep track of POS of points
         
         print(x)
-        print(y)
-    
-        canvas.drawLine(fromX: Int(x), fromY: Int(y), toX: 5, toY: 5)
-        
+        //print(y)
+        canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
+        canvas.drawLine(fromX: Int(oldx), fromY: Int(oldy), toX: Int(x), toY: Int(y), lineWidth: 5)
         // Bounce when hitting wall
         if (x > Double(canvas.width) || x < 0) {
             s *= -1
