@@ -81,8 +81,7 @@ class Sketch {
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
-        
-        
+    
     }
     
 }
