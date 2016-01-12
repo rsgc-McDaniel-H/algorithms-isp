@@ -9,7 +9,7 @@ class Sketch {
     let canvas : Canvas
     
     // Declare any properties you need for your sketch below this comment, but before init()
-    var x : Double = 0
+    var x : Double = -10
     var s = 10
     var y : Double = 0
     var oldx : Double = 0
@@ -54,7 +54,7 @@ class Sketch {
         
         // Horizontal position of circle
         //x = x + s
-        x = Double(canvas.frameCount)
+        x = Double(canvas.frameCount - 10)
         
         // vertical position of circle
         y = 0.1*(x-200)*(x-200)+50
