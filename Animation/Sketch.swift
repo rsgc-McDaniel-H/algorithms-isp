@@ -53,7 +53,7 @@ class Sketch {
         oldy = y
         
         // Horizontal position of circle
-        //x = x + s
+        //x = x + s 
         x = Double(canvas.frameCount - 10)
         
         // vertical position of circle
@@ -81,6 +81,11 @@ class Sketch {
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
+        
+        //Put text up
+        canvas.textColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
+        canvas.drawText(message: "Hello World")
+        
     
     }
     
