@@ -1,21 +1,23 @@
-
+//Hudson McDaniel
+//Due Jan 17, 2016
 
 import Foundation
 import Cocoa
 
 class Sketch {
 
-    // NOTE: Every sketch must contain an object of type Canvas named 'canvas'
-    //       Therefore, the line immediately below must always be present.
+   
     let canvas : Canvas
     
     // Declare any properties you need
     var x : Double = -10
     var s = 10
     var y : Double = 0
+    //state the previous x position
     var oldx : Double = 0
+    //state the previous y position
     var oldy : Double = 0
-    
+   
 
 
     // This runs once
@@ -70,11 +72,12 @@ class Sketch {
         
         //Keep track of POS of points
         
-        // print(x)
-        //print(y)
-            
+         print(x)
+        print(y)
+        
+        //State the color of the line
+        canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         //connecting the mini circles on the screen to form a true graph
-            canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         canvas.drawLine(fromX: Int(oldx), fromY: Int(oldy), toX: Int(x), toY: Int(y), lineWidth: 5)
         
             
@@ -88,10 +91,13 @@ class Sketch {
         
         // Draw the graph in form of little circles
         canvas.drawShapesWithBorders = false
+        //make the background white
         canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
-        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
         
-        //Put text up
+        //draw circles on the screen to make a graph
+        canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
+            
+        //Put text up on the screen
         canvas.textColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
         canvas.drawText(message: "By Hudson McDaniel")
         
