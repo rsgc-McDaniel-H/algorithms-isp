@@ -69,7 +69,14 @@ for i in 0...20 {
  
     // draw horizontal lines
   canvas.drawLine(fromX: 0, fromY: i * 25 , toX: 500, toY: i * 25)
-
+    
+    
+    var root = sqrt(25.0)
+    print("square root is \(root)")
+    
+    y = sqrt(25.0)
+    
+    
 }
 
 canvas

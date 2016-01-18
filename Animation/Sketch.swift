@@ -1,6 +1,7 @@
 
 
 import Foundation
+import Cocoa
 
 class Sketch {
 
@@ -8,7 +9,7 @@ class Sketch {
     //       Therefore, the line immediately below must always be present.
     let canvas : Canvas
     
-    // Declare any properties you need for your sketch below this comment, but before init()
+    // Declare any properties you need
     var x : Double = -10
     var s = 10
     var y : Double = 0
@@ -17,20 +18,19 @@ class Sketch {
     
 
 
-    // This runs once, equivalent to setup() in Processing
+    // This runs once
     init() {
         
-        // Create canvas object – specify size
+        // Create canvas
         canvas = Canvas(width: 400, height: 500)
         
-        // The frame rate can be adjusted; the default is 60 fps
+        // The frame rate
         canvas.framesPerSecond = 100
         
         // background
         canvas.fillColor = Color(hue: 181, saturation: 0, brightness: 98, alpha: 100)
-        canvas.drawRectangle(bottomRightX: 0, bottomRightY: 0, width: canvas.width, height: canvas.height)
-        //Vertical
-        
+       
+        //array for the grid lines on the screen
         for i in 0...20 {
             
             
@@ -45,46 +45,55 @@ class Sketch {
         
     }
     
-    // Runs repeatedly, equivalent to draw() in Processing
-    func draw() {
+    // Runs repeatedly
+    
+    
+        func draw() {
         
-        
+        //the previous value for the x coordinate
         oldx = x
+        //the previous value for the y coordinate
         oldy = y
         
-        // Horizontal position of circle
+        //Stating the value of x
         //x = x + s 
         x = Double(canvas.frameCount - 10)
         
-        // vertical position of circle
+        // formula for the graph
         y = 0.1*(x-200)*(x-200)+50
+        
+            
+          //My Attempt at getting the square root function to work it does not graph if the the other function is attempting to graph
+        //var root = sqrt(64.0)
+        //print("square root is \(root)")
+        //y = 0.1*(x-root)+50
         
         //Keep track of POS of points
         
-        print(x)
+        // print(x)
         //print(y)
-        canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
+            
+        //connecting the mini circles on the screen to form a true graph
+            canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         canvas.drawLine(fromX: Int(oldx), fromY: Int(oldy), toX: Int(x), toY: Int(y), lineWidth: 5)
-        // Bounce when hitting wall
+        
+            
+            
         if (x > Double(canvas.width) || x < 0) {
             s *= -1
         }
         
-        //draw a rect with noe fill
-        //canvas.drawRectangle(bottomRightX: 50, bottomRightY: 50, width: 200, height: 200)
-        
-        
+            
 //        // Clear the background
-//        canvas.drawShapesWithBorders = true
         
-        // Draw a circle that moves across the screen
+        // Draw the graph in form of little circles
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
         
         //Put text up
         canvas.textColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
-        canvas.drawText(message: "Hello World")
+        canvas.drawText(message: "By Hudson McDaniel")
         
     
     }
