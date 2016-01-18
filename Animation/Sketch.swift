@@ -17,8 +17,7 @@ class Sketch {
     var oldx : Double = 0
     //state the previous y position
     var oldy : Double = 0
-   
-
+  
 
     // This runs once
     init() {
@@ -65,29 +64,30 @@ class Sketch {
         y = 0.1*(x-200)*(x-200)+50
         
             
-          //My Attempt at getting the square root function to work it does not graph if the the other function is attempting to graph
-        //var root = sqrt(64.0)
-        //print("square root is \(root)")
-        //y = 0.1*(x-root)+50
+        // My Attempt at getting the square root function to work it does not graph if the the othe function is attempting to graph
+       // var root = sqrt(64.0)
+       // print("square root is \(root)")
+       // y = 0.1*(x-root)+50
         
         //Keep track of POS of points
         
-         print(x)
+        print(x)
         print(y)
         
         //State the color of the line
         canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 98, alpha: 100)
         //connecting the mini circles on the screen to form a true graph
         canvas.drawLine(fromX: Int(oldx), fromY: Int(oldy), toX: Int(x), toY: Int(y), lineWidth: 5)
-        
-            
+       
+    
+    
             
         if (x > Double(canvas.width) || x < 0) {
             s *= -1
         }
         
             
-//        // Clear the background
+        // Clear the background
         
         // Draw the graph in form of little circles
         canvas.drawShapesWithBorders = false
@@ -96,6 +96,7 @@ class Sketch {
         
         //draw circles on the screen to make a graph
         canvas.drawEllipse (centreX: Int(x), centreY: Int(y), width: 5, height: 5)
+        
             
         //Put text up on the screen
         canvas.textColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
