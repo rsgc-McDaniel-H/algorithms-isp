@@ -61,7 +61,7 @@ class Sketch {
         x = Double(canvas.frameCount - 10)
         
         // formula for the graph
-        y = 0.001*(x-200)*(x-200)+50
+        y = 0.01*(x-200)*(x-200)+50
         
             
         // My Attempt at getting the square root function to work it does not graph if the the othe function is attempting to graph
